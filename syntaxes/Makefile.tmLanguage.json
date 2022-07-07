@@ -2172,6 +2172,75 @@
         },
         "variable": {
           "patterns": [
+
+            {
+              "captures": {
+                "1": {
+                  "name": "punctuation.definition.variable.makefile"
+                }
+              },
+              "match": "(\\$?\\$)[@%<?^+*]",
+              "name": "variable.language.makefile"
+            },
+            {
+              "begin": "\\$?\\$\\(",
+              "captures": {
+                "0": {
+                  "name": "punctuation.definition.variable.makefile"
+                }
+              },
+              "end": "\\)",
+              "name": "string.interpolated.makefile",
+              "patterns": [
+                {
+                  "include": "#variables"
+                },
+                {
+                  "match": "\\G(MAKEFILES|VPATH|SHELL|MAKESHELL|MAKE|MAKELEVEL|MAKEFLAGS|MAKECMDGOALS|CURDIR|SUFFIXES|\\.LIBPATTERNS)(?=\\s*\\))",
+                  "name": "variable.language.makefile"
+                },
+                {
+                  "begin": "\\G(subst|patsubst|strip|findstring|filter(-out)?|sort|word(list)?|firstword|lastword|dir|notdir|suffix|basename|addsuffix|addprefix|join|wildcard|realpath|abspath|info|error|warning|shell|foreach|if|or|and|call|eval|value|file|guile)\\s",
+                  "beginCaptures": {
+                    "1": {
+                      "name": "support.function.$1.makefile"
+                    }
+                  },
+                  "end": "(?=\\))",
+                  "name": "meta.scope.function-call.makefile",
+                  "patterns": [
+                    {
+                      "include": "#variables"
+                    },
+                    {
+                      "match": "%|\\*",
+                      "name": "constant.other.placeholder.makefile"
+                    }
+                  ]
+                },
+                {
+                  "begin": "\\G(origin|flavor)\\s(?=[^\\s)]+\\s*\\))",
+                  "contentName": "variable.other.makefile",
+                  "end": "(?=\\))",
+                  "name": "meta.scope.function-call.makefile",
+                  "patterns": [
+                    {
+                      "include": "#variables"
+                    }
+                  ]
+                },
+                {
+                  "begin": "\\G(?!\\))",
+                  "end": "(?=\\))",
+                  "name": "variable.other.makefile",
+                  "patterns": [
+                    {
+                      "include": "#variables"
+                    }
+                  ]
+                }
+              ]
+            },
             {
               "match": "(\\$)(\\@(?=\\W))",
               "captures": {
