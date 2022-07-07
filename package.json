@@ -2,7 +2,7 @@
   "name": "stannum-makefile-syntax",
   "displayName": "Stannum Makefile Syntax",
   "description": "Makefile Syntax Highlight",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "preview": true,
   "license": "Apache-2.0",
   "icon": "makefile.png",
