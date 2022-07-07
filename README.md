@@ -1,0 +1,1 @@
+# Stannum Makefile Syntax

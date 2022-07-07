@@ -1,0 +1,40 @@
+{
+  "name": "stannum-makefile-syntax",
+  "displayName": "Stannum Makefile Syntax",
+  "description": "Makefile Syntax Highlight",
+  "version": "0.0.1",
+  "preview": true,
+  "license": "Apache-2.0",
+  "publisher": "stannum",
+  "engines": {
+    "vscode": "^1.68.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stannum-l/stannum-makefile-syntax"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "Makefile",
+        "aliases": [
+          "makefile"
+        ],
+        "extensions": [
+          ""
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "Makefile",
+        "scopeName": "source.makefile",
+        "path": "./syntaxes/Makefile.tmLanguage.json"
+      }
+    ]
+  }
+}
