@@ -1,0 +1,54 @@
+{
+    "target": {
+        "prefix": "target",
+        "body": [
+            "${1:targets}: ${2:prerequisites}",
+            "\t${3:recipe}"
+        ]
+    },
+    "special-target": {
+        "description": "special target",
+        "prefix": "special-target",
+        "body": [
+            ".PHONY: ${1|install,uninstall,reinstall,tests|}",
+            "$1:",
+            "\t${2:recipe}"
+        ]
+    },
+    "ifeq": {
+        "description": "[if] [eq]ual",
+        "prefix": "ifeq",
+        "body": [
+            "ifeq (${1:first},${2:second})",
+            "${3:commands}",
+            "endif"
+        ]
+    },
+    "ifneq": {
+        "description": "[if] [n]ot [eq]ual",
+        "prefix": "ifneq",
+        "body": [
+            "ifneq (${1:first},${2:second})",
+            "${3:commands}",
+            "endif"
+        ]
+    },
+    "ifdef": {
+        "description": "[if] [def]ined",
+        "prefix": "ifdef",
+        "body": [
+            "ifdef ${1:variable}",
+            "${2:commands}",
+            "endif"
+        ]
+    },
+    "ifndef": {
+        "description": "[if] [n]ot [def]ined",
+        "prefix": "ifndef",
+        "body": [
+            "ifndef ${1:variable}",
+            "${2:commands}",
+            "endif"
+        ]
+    }
+}

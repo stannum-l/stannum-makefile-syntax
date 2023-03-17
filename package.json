@@ -18,6 +18,12 @@
     "Programming Languages"
   ],
   "contributes": {
+    "snippets": [
+      {
+        "language": "makefile",
+        "path": "./snippets/snippets.json"
+      }
+    ],
     "languages": [
       {
         "id": "Makefile",
