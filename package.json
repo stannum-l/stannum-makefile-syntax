@@ -2,17 +2,20 @@
   "name": "stannum-makefile-syntax",
   "displayName": "Stannum Makefile Syntax",
   "description": "Makefile Syntax Highlight",
-  "version": "0.0.3",
-  "preview": true,
+  "author": "Tin Lam <dev@chronospheres.com>",
+  "version": "1.0.0",
   "license": "Apache-2.0",
-  "icon": "makefile.png",
+  "icon": "asset/icon.png",
   "publisher": "stannum",
   "engines": {
-    "vscode": "^1.68.0"
+    "vscode": "^1.107.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/stannum-l/stannum-makefile-syntax"
+  },
+  "bugs": {
+    "url": "https://github.com/stannum-l/stannum-makefile-syntax/issues"
   },
   "categories": [
     "Programming Languages"
